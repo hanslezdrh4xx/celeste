@@ -15,7 +15,7 @@ app = Flask('celeste')
 
 @app.route('/')
 def main():
-	timezone = request.get('timezone')
+	timezone = request.args.get('timezone')
 	if not timezone:
 		timezone = 'UTC'
 	#local users only
@@ -32,4 +32,6 @@ def main():
 	else:
 		return "Permission denied", 401
 
+if __name__ == "__main__":
+	app.run(port=33333)
 

@@ -3,9 +3,9 @@ from pytz import timezone
 from starplot import MapPlot, Projection
 from starplot.styles import PlotStyle, extensions
 
-def get_stars(timezone):
+def get_stars(tz):
 
-    tz = timezone(timezone)
+    tz = timezone(tz)
     dt = datetime(2022, 7, 9, 22, 0, tzinfo=tz) 
 
     p = MapPlot(
